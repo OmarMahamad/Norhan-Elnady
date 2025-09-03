@@ -1,0 +1,25 @@
+name: Noor Action 
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest 
+  
+
+    steps:
+    - name: Checkout repository
+      uses: action/chouckout@v3
+
+    - name: Setup .Net
+      uses: action/setup-dotnet@v3
+      with:
+        dotnet-version "8.0.3"
+    
+    - name: clean
+      run: dotnet clean 
+    
+ 
+    
